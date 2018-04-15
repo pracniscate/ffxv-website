@@ -21,9 +21,23 @@
       <blockquote>This is a fantasy based on reality.
         </br>— Tagline
       </blockquote>
+      <!-- <p><input id="input"></p>
+      <p><button id="button">Change Title!</button></p>
+      <script>
+        var button = document.getElementById('button');
+        var input = document.getElementById('input');
+        button.addEventListener("click", function(){
+          title.innerHTML = input.value;
+        });
+      </script> -->
     </div>
     <div>
-      <h2>Final Fantasy XV</h2>
+      <h2 id="title">Final Fantasy XV</h2>
+      <!-- JavaScript getElementById -->
+      <script>
+        var title = document.getElementById('title');
+        title.innerHTML = "FINAL FANTASY XV";
+      </script>
       <p>is the fifteenth main installment in the main <em>Final Fantasy</em> series. The game was released worldwide on November 29, 2016 for the PlayStation 4 (supporting PlayStation 4 Pro, but optimized for the standard version[1]) and Xbox One, and later March 6, 2018 on PC as the Windows Edition. It was directed by Hajime Tabata, but began development under Tetsuya Nomura, who provided character designs for the main cast, with the soundtrack composed by Yoko Shimomura. <em>Final Fantasy XV</em> is the first action role-playing game in the main series, and the first single-player Final Fantasy game to be released with the "games as a service" model, receiving numerous free updates as well as paid <abbr title="Downloadable Content">DLC</abbr> and seasonal events.</p>
       <p>The story is told over the course of 15 chapters. It focuses on Noctis Lucis Caelum, a prince from the kingdom of Lucis who fights to reclaim his throne and must go on to fulfill a greater destiny. <em>Final Fantasy XV</em> aims to examine its characters' humanity and place them in a more realistic setting than most <em>Final Fantasy</em> games. Its prominent themes are friendship, destiny, and legacy.</p>
     </div>
@@ -72,6 +86,33 @@
             - A mercenary hired by the empire. She is a commodore within the imperial military.
           </li>
         </ul>
+        <!-- creating a timer -->
+        <h5 id = "timerTitle">:)</h5>
+        <p><button id = "timerButton">Start</button></p>
+
+        <script>
+          var button = document.getElementById('timerButton');
+          var title = document.getElementById('timerTitle');
+          var time = 0;
+          var myInterval = -1;
+
+          button.addEventListener("click", function(){
+            // if timer is paused, Start
+            if (myInterval == -1) {
+              button.innerHTML = "Pause";
+              myInterval = setInterval(function(){
+                time++;
+                timerTitle.innerHTML = time;
+              }, 1000);
+              // else, pause
+            } else {
+                button.innerHTML = "Start";
+                clearInterval(myInterval);
+                myInterval = -1;
+            }
+          });
+        </script>
+
     </div>
     <footer>
     <a href="http://finalfantasy.wikia.com/wiki/Final_Fantasy_XV">Source</a>
