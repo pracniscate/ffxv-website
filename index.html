@@ -86,34 +86,37 @@
             - A mercenary hired by the empire. She is a commodore within the imperial military.
           </li>
         </ul>
-        <!-- creating a timer -->
-        <h5 id = "timerTitle">:)</h5>
-        <p><button id = "timerButton">Start</button></p>
-
-        <script>
-          var button = document.getElementById('timerButton');
-          var title = document.getElementById('timerTitle');
-          var time = 0;
-          var myInterval = -1;
-
-          button.addEventListener("click", function(){
-            // if timer is paused, Start
-            if (myInterval == -1) {
-              button.innerHTML = "Pause";
-              myInterval = setInterval(function(){
-                time++;
-                timerTitle.innerHTML = time;
-              }, 1000);
-              // else, pause
-            } else {
-                button.innerHTML = "Start";
-                clearInterval(myInterval);
-                myInterval = -1;
-            }
-          });
-        </script>
-
     </div>
+    <!-- creating a timer -->
+    <div class="timer">
+      <h4 id="timer-title">:)</h3>
+      <div class="button-container">
+        <button id="start-button" class="timer-button">Start</button>
+        <button id="reset-button" class="timer-button">Reset</button>
+      </div class="button-container">
+    </div>
+    <script>
+      var button = document.getElementById('start-button');
+      var title = document.getElementById('timer-title');
+      var time = 0;
+      var myInterval = -1;
+
+      button.addEventListener("click", function(){
+        // if timer is paused, Start
+        if (myInterval == -1) {
+          button.innerHTML = "Pause";
+          myInterval = setInterval(function(){
+            time++;
+            title.innerHTML = time;
+          }, 1000);
+          // else, pause
+        } else {
+            button.innerHTML = "Start";
+            clearInterval(myInterval);
+            myInterval = -1;
+        }
+      });
+    </script>
     <footer>
     <a href="http://finalfantasy.wikia.com/wiki/Final_Fantasy_XV">Source</a>
     </footer>
